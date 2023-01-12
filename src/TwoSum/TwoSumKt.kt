@@ -1,19 +1,18 @@
 package TwoSum
 
-class TwoSumKt {
-    fun twoSum1(nums: IntArray, target: Int): IntArray? {
-        var listRes = mutableListOf<Int>()
-        for (i in 0..nums.size - 1) {
-            //Hash map
-            var prevMap:HashMap<Int,Int> = HashMap<Int,Int>()
+class Soln {
+    fun twoSum(nums: IntArray, target: Int): IntArray {
+        var hash: HashMap<Int, Int> = HashMap()
+        for (i in nums.indices) {
             val num = nums[i]
-            //Get the difference
-            var diff = target - num
-            if (prevMap.containsKey(nums[i])){
-                return  listRes.add()
+            var  difference = target - num
+            if (hash.containsKey(difference)){
+                return intArrayOf(hash[difference]!!,i)
             }
-        prevMap.put(diff,i)
+            hash.put(num,i)
         }
-        return  listRes
+        return intArrayOf()
     }
 }
+
+
