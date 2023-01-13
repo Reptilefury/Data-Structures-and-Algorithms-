@@ -16,3 +16,34 @@ class Solun {
         return new int[]{};
     }
 }
+
+//Recall
+class Soln22 {
+    public int[] twoSum(int[] nums,int target){
+        //Create a hashMap to store the index and the value
+        HashMap<Integer,Integer> hash = new HashMap<>();
+        for(int i=0;i<nums.length;i++){
+            int num = hash.get(i);
+            int difference = target - num;
+            if (hash.containsKey(difference)){
+                return new int[] {hash.get(difference),i};
+            }
+            else{
+                hash.put(num,i);
+            }
+        }
+        return new int[]{};
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
