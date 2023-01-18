@@ -13,3 +13,27 @@ class Soln:
                 hash[tuple(count)].append(string)
         return hash.values()
 
+
+# Given array  of strings group anagrams together and return the anagram in
+class Soln:
+    def anagram_group(self, list_anagram: list[str]):
+        hash_map = collections.defaultdict(list)
+        for string in list_anagram:
+            count = [0] * 26
+            for char in string:
+                count[ord(char) - ord('a')] += 1
+            hash_map[tuple(count)].append(string)
+        return hash_map.values()
+
+
+
+
+
+
+
+
+
+
+
+
+
