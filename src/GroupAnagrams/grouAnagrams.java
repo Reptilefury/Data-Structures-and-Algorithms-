@@ -24,3 +24,43 @@ public class grouAnagrams {
         return res;
     }
 }
+
+
+class Solution {
+    public List<List<String>> groupAnagrams(String[] strs) {
+        List<List<String>> res = new ArrayList<>();
+        if (strs.length == 0) {
+            return res;
+        }
+        HashMap<String, List<String>> hashMap = new HashMap<>();
+        for (String s : strs) {
+            char[] hash = new char[26];
+            for (char c : s.toCharArray()) {
+                hash[c - 'a']++;
+            }
+            String key = new String(hash);
+            hashMap.computeIfAbsent(key, k -> new ArrayList<>());
+            hashMap.get(key).add(s);
+        }
+        res.addAll(hashMap.values());
+        return res;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
