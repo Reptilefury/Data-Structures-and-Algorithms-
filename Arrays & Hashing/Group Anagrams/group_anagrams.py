@@ -1,7 +1,6 @@
 # Given an array of strings group the anagrams together
 import collections
 
-
 class Soln:
     def groupAnagram(self, strs: list[str]):
         hash = collections.defaultdict(list)
@@ -24,6 +23,22 @@ class Soln:
                 count[ord(char) - ord('a')] += 1
             hash_map[tuple(count)].append(string)
         return hash_map.values()
+
+
+
+
+#Given an array of strings group the anagrams and return the answer in any order
+class Soln2:
+    def group_anagram(self,list_string:list[str])->list[list[str]]:
+        hash_map = collections.defaultdict(list)
+        for string in list_string:
+            count = [0] * 26
+            for char in string:
+                count[ord(char) - ord('a')] += 1
+            hash_map[tuple(count)].append(string)
+        return  hash_map.values()
+
+
 
 
 
