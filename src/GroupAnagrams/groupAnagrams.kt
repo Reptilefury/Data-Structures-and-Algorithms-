@@ -37,6 +37,25 @@ class Solution2{
 
 
 
+class Solution3{
+    fun groupAnagram(strs:Array<String>):List<List<String>>{
+        val res:HashMap<String,MutableList<String>> = HashMap()
+        for(string in strs){
+            val count = IntArray(26)
+            for(char in string){
+                val index = char - 'a'
+                count[index] += 1
+            }
+            res[count.joinToString()] = res.getOrDefault(count.joinToString(), mutableListOf()).also { it.add(s)}
+        }
+        return  res.values.toList()
+
+    }
+}
+
+
+
+
 
 
 
