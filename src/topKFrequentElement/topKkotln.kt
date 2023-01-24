@@ -25,7 +25,30 @@ class topKkotln{
 }
 
 
-
+class Solution2{
+    fun topKfreq(nums:IntArray,k: Int):IntArray{
+        var res = mutableListOf<Int>()
+        var count = HashMap<Int,Int>()
+        var freq = MutableList<MutableList<Int>>(nums.size +1){
+            mutableListOf()
+        }
+        for (n in nums){
+            count[n] = count.getOrDefault(n,0) +1
+        }
+        for((n,c) in count){
+            freq[c].add(n)
+        }
+        for (i in freq.size - 1 downTo 0){
+            for (n in freq[i]){
+                res.add(n)
+                if(res.size==k){
+                    return  res.toIntArray()
+                }
+            }
+        }
+        return  intArrayOf()
+    }
+}
 
 
 
