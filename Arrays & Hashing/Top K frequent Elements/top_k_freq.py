@@ -31,6 +31,7 @@ class Solution2:
                 if len(res) == k:
                     return res
 
+
 class Solution3:
     def topKfreq(self, nums: list[int], k: int) -> list[int]:
         count = {}  # Hash Map
@@ -46,8 +47,20 @@ class Solution3:
                 if len(res) == k:
                     return res
 
-
-
+# Given a list of integers nums and  an integer k return the most frequent elements
+class Solution4:
+    def topKfreq(self,nums:list[int],k:int)->list[int]:
+        count = {}
+        list_num= [[] for i in range(len(nums)+ 1)]
+        for num in nums:
+            count[num] = 1 +  count.get(num,0)
+            for key1,value in count.items():
+                list_num[value].append(key1)
+            res = []
+            for i in range(len(list_num)-1,0,-1):
+                res.append(i)
+                if len(res) == k:
+                    return  res
 
 
 
