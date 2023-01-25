@@ -64,11 +64,21 @@ class Solution4:
 
 
 
-
-
-
-
-
+#Given an integer array nums and an integer k return k  most frequent elements
+class SolutionTopK:
+    def topKfreq(self,nums:list[int],k:int):
+        count = {}
+        freq = [[] for i in range(len(nums)+1)]
+        for number  in nums:
+            count[number] = count.get(number,0)
+            for key,value in count.items():
+                freq[value].append(key)
+            res = []
+            for i in range(len(freq)-1,0,-1):
+                for n in freq[i]:
+                    res.append(n)
+                    if len(res) ==k:
+                        return  res
 
 
 
