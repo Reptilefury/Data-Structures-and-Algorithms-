@@ -35,6 +35,29 @@ class ProdArrayExceptSelfKt1{
 
 
 
+class ProdArrayExceptSelf{
+    fun prodArray(nums:IntArray):IntArray{
+        var arr = intArrayOf(nums.size)
+        var prefix = 1
+        for(num in nums){
+            arr[num] = prefix
+            prefix *= nums[num]
+        }
+        var postfix = 1
+        for(num in nums.size downTo 0){
+            arr[num] *= prefix
+            prefix *= nums[num]
+        }
+        return arr
+    }
+}
+
+
+
+
+
+
+
 
 
 
