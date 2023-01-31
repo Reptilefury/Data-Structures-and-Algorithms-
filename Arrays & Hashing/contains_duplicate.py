@@ -23,3 +23,17 @@ class Soln2:
             else:
                 hashSet.add(i)
         return False
+
+
+# Review contains duplicate
+# Given an integer array nums return true  if an integer appears more that twice
+# or False if every element is distinct
+class SolnDupe:
+    def contains_duplicate(self, nums: list[int]) -> bool:
+        hashSet = set()
+        for i in nums:
+            if i in hashSet:
+                return True
+            else:
+                hashSet.add(i)
+        return False
