@@ -13,3 +13,18 @@ class Soln {
         return arr.all { it == 0 }
     }
 }
+
+
+
+class SolnAnnaGram{
+    fun anagram(s: String, t:String):Boolean{
+        var arr = Array(26){0}
+        if (s.length != t.length){
+            return  false
+        }
+        for(i in s.indices){
+            arr[s[i]-'a']++
+            arr[t[i]-'a']-- }
+        return arr.all { it  == 0}
+    }
+}
