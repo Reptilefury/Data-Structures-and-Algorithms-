@@ -2,7 +2,7 @@ package TwoSum;
 
 import java.util.HashMap;
 
-class Solun {
+class Solun{
     public int[] twoSum(int[] nums, int target) {
         HashMap<Integer, Integer> hash = new HashMap<>();//value and the index
         for (int i = 0; i < nums.length; i++) {
@@ -35,15 +35,46 @@ class Soln22 {
         return new int[]{};
     }
 }
+class Soln2Sum{
+    public int[] twoSum(int[] nums, int target){
+        HashMap<Integer,Integer>  hashMap = new HashMap<>();
+        for(int i = 0;i<nums.length;i++){
+            int num = nums[i];
+            int difference = target - num;
+            if (hashMap.containsKey(difference)){
+                return  new int[] {hashMap.get(difference),i};
+            }
+            hashMap.put(num,i);
+        }
+        return new int[] {};
+    }
+}
 
-
-
-
-
-
-
-
-
-
-
-
+class  SolnTwS{
+    int[] twoSum(int[] nums,int target){
+        HashMap<Integer,Integer> hashMap = new HashMap<>();
+        for(int i = 0;i<nums.length;i++){
+            int num = nums[i];
+            int difference = target - num;
+            if(hashMap.containsKey(difference)){
+                return  new int[] {hashMap.get(difference),i};
+            }
+            hashMap.put(num,i);
+        }
+        return  new int[] {};
+    }
+}
+class prince{
+    public  int[] endJustifies(int[] nums,int target){
+        HashMap<Integer,Integer> hashMap = new HashMap<>();
+        for(int i = 0;i<nums.length;i++){
+            int num = nums[i];
+            int difference = target - num;
+            if(hashMap.containsKey(difference)){
+                return  new int[] {hashMap.get(difference),i};
+            }
+            hashMap.put(num,i);
+        }
+        return  new int[] {};
+        }
+    }
