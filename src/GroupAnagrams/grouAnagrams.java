@@ -1,5 +1,6 @@
 package GroupAnagrams;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -91,8 +92,24 @@ class Soltn2{
 
 
 
-
-
+class GroupAnagrams{
+    public List<List<String>> groupAnagram(String[] strs){
+        List<List<String>> arr = new  ArrayList<>();
+        if(strs.length ==0) return arr;
+        HashMap<String,List<String>> hashMap = new HashMap<>();
+        for(String s:strs){
+            int[] hash = new int[26];
+            for (char c:s.toCharArray()){
+                hash[c - 'a']++;
+            }
+            String key = new String(Arrays.toString(hash));
+            hashMap.computeIfAbsent(key,k -> new ArrayList<>());
+            hashMap.get(key).add(s);
+        }
+        arr.addAll(hashMap.values());
+        return arr;
+    }
+}
 
 
 
