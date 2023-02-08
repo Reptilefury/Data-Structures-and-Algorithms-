@@ -1,9 +1,7 @@
 package topKFrequentElement;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.PriorityQueue;
-
 public class topKfreq {
     public int[] topKfrequent(int[] nums, int k) {
         int[] arr = new int[k];
@@ -23,7 +21,6 @@ public class topKfreq {
         return arr;
     }
 }
-
 
 class Solution1 {
     public int[] topKfreq(int[] nums, int k) {
@@ -82,28 +79,6 @@ class TopKfreq {
         return  res;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
