@@ -118,3 +118,23 @@ class TopKfreqElementQ{
         return  arr;
     }
 }
+
+class TopKFreqElement{
+    public int[] topKfreq(int[] nums,int k){
+        int[] arr = new int[k];
+        HashMap<Integer,Integer> hashMap = new HashMap<>();
+        for(int num:nums) hashMap.put(num,hashMap.getOrDefault(num,0));
+        PriorityQueue<Map.Entry<Integer,Integer>> pq = new PriorityQueue<>(
+                (a,b) -> a.getValue() - b.getValue()
+        );
+        for(Map.Entry<Integer,Integer> it: hashMap.entrySet()){
+            pq.add(it);
+            if(pq.size() >k) pq.poll();
+        }
+        int  i = k;
+        while (!pq.isEmpty()){
+            arr[--i] = pq.poll().getKey();
+        }
+        return  arr;
+     }
+}
