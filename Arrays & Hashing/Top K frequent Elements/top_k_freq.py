@@ -145,3 +145,43 @@ class TopKfreqLast:
                 results.append(n)
             if len(results) == k:
                 return results
+
+class TopKFreQ:
+    def topKfreq(self,nums:list[int],k:int)->list[int]:
+        count = {}
+        freq = [[] for i in range(len(nums))]
+        for i in nums:
+            count[i] = 1 + count.get(i,0)
+        for n,c in count.items():
+            freq[c].append(n)
+        res = []
+        for i in range(len(freq)-1,0,-1):
+            for n  in freq:
+                res.append(n)
+                if len(res)== k:
+                    return  res
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
