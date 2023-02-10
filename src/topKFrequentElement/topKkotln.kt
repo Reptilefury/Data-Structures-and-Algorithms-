@@ -76,7 +76,7 @@ class Soln {
     }
 }
 
-class topKfreq{
+class topKfreqjAV{
     fun topKfreq(nums:IntArray,k:Int):IntArray{
         val res = mutableListOf<Int>()
         val count = hashMapOf<Int,Int>()
