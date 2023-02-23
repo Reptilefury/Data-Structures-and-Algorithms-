@@ -56,20 +56,40 @@ class SolutionEncodeDec:
         res.append(strs[i + j: j + 1 + length])
         return res
 
+
 class Solution2:
-    def encode(self,strs):
+    def encode(self, strs):
         res = ""
         for s in strs:
             res += str(len(strs)) + "#" + s
-        return  res
-
-    def decode(self,strs):
-        res,i = [],0
-        while i < len(strs):
-            j = i
-        while  strs[j] != "#":
-            j += 1
-        length = int(strs[i:j])
-        res.append(strs[i +1 : j+1  + length])
         return res
 
+    def decode(self, strs):
+        res, i = [], 0
+        while i < len(strs):
+            j = i
+        while strs[j] != "#":
+            j += 1
+        length = int(strs[i:j])
+        res.append(strs[i + 1: j + 1 + length])
+        return res
+
+
+class SolutionEncode:
+
+    def encode(self, strs):
+        res = ""
+        for s in strs:
+            res += str(len(strs)) + "#" + s
+        return res
+
+    def decode(self, strs):
+        res, i = [], 0
+        while i < len(strs):
+            j = i
+        while strs[j] != "#":
+            j += 1
+        length = int(strs[i:j])
+        res.append(strs[j + 1: j + 1 + length])
+        i = j + 1 + length
+        return res
