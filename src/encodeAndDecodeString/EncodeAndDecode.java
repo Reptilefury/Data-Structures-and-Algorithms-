@@ -1,6 +1,8 @@
 package encodeAndDecodeString;
+
 import java.util.ArrayList;
 import java.util.List;
+
 public class EncodeAndDecode {
     public String encode(List<String> strs) {
         StringBuilder encodedString = new StringBuilder();
@@ -24,25 +26,50 @@ public class EncodeAndDecode {
     }
 }
 
-class EncodeDecode2{
-    public String  encode(List<String> strs){
-        StringBuilder encodeString =  new StringBuilder();
-        for(String s:strs){
+class EncodeDecode2 {
+    public String encode(List<String> strs) {
+        StringBuilder encodeString = new StringBuilder();
+        for (String s : strs) {
             encodeString.append(s.length()).append("#").append(s);
         }
-        return  encodeString.toString();
+        return encodeString.toString();
     }
-    public List<String> decode(String strs ){
-        List<String> list = new  ArrayList();
+
+    public List<String> decode(String strs) {
+        List<String> list = new ArrayList();
         int i = 0;
-        while(i < strs.length()){
+        while (i < strs.length()) {
             int j = i;
-            while(strs.charAt(j) != '#'){
+            while (strs.charAt(j) != '#') {
                 j++;
             }
-            int length = Integer.valueOf(strs.substring(i,j));
-            i = j+1 + length;
-            list.add(strs.substring(j + i,i));
+            int length = Integer.valueOf(strs.substring(i, j));
+            i = j + 1 + length;
+            list.add(strs.substring(j + i, i));
+        }
+        return list;
+    }
+}
+
+
+class EncodeDecodeSol {
+    public String encode(List<String> strs) {
+        StringBuilder stringEncode = new StringBuilder();
+        for (String s : strs) {
+            stringEncode.append(s.length()).append("#").append(s);
+        }
+        return stringEncode.toString();
+    }
+
+    public List<String> decode(String strs) {
+        List<String> list = new ArrayList<>();
+        int i = 0;
+        while (i < strs.length()) {
+            int j = i;
+            while (strs.charAt(j) != '#') j++;
+            int length = Integer.valueOf(strs.substring(i, j));
+            i = j + 1 + length;
+            list.add(strs.substring(j + 1, i));
         }
         return list;
     }
