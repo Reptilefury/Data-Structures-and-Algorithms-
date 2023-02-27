@@ -1,8 +1,6 @@
 package encodeAndDecodeString;
-
 import java.util.ArrayList;
 import java.util.List;
-
 public class EncodeAndDecode {
     public String encode(List<String> strs) {
         StringBuilder encodedString = new StringBuilder();
@@ -74,3 +72,18 @@ class EncodeDecodeSol {
         return list;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
