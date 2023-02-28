@@ -78,3 +78,30 @@ class Solution6:
                     length += 1
                 longest = max(length, longest)
         return longest
+
+
+class Solution9:
+    def longest_sequence(self, nums: list[int]) -> int:
+        numSet = set(int)
+        longest = 0
+        for n in nums:
+            if (n - 1) not in numSet:
+                length = 0
+                while (n + length) in numSet:
+                    length += 1
+                longest = max(length, longest)
+        return longest
+
+
+# Leet code hard
+class Solution99:
+    def longest_consecutive_seq(self, nums: list[int]) -> int:
+        numSet = set(nums)
+        longest = 0
+        for n in nums:
+            if (n - 1) not in numSet:
+                length = 0
+                while (n + length) in numSet:
+                    length += 1
+                longest = max(length, longest)
+        return longest
