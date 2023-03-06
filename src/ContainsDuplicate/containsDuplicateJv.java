@@ -19,31 +19,56 @@ public class containsDuplicateJv {
         return false;
     }
 }
-class SolutionDuplicate{
-    public boolean containsDuplicate(int[] nums){
+
+class SolutionDuplicate {
+    public boolean containsDuplicate(int[] nums) {
         //HashSet to store distinct elements
         Set<Integer> hashSet = new HashSet<>();
-        for(int num:nums){
-            if(hashSet.contains(nums[num])){
+        for (int num : nums) {
+            if (hashSet.contains(nums[num])) {
                 return true;
-            }else {
+            } else {
                 hashSet.add(nums[num]);
             }
         }
-        return  false;
+        return false;
     }
 }
 
-class ContainsDuplicat22{
-    public boolean containsDuplicate(int[] nums){
+class ContainsDuplicat22 {
+    public boolean containsDuplicate(int[] nums) {
         Set<Integer> hashSet = new HashSet<>();
-        for(int i =0; i < nums.length;i++){
-            if(hashSet.contains(nums[i])){
+        for (int i = 0; i < nums.length; i++) {
+            if (hashSet.contains(nums[i])) {
                 return true;
-            }else{
+            } else {
                 hashSet.add(nums[i]);
             }
         }
         return false;
-     }
+    }
 }
+
+class ContainsDuplicate32 {
+    public boolean containsDupe(int[] nums) {
+        Set<Integer> hashSet = new HashSet<>();
+        for (int i = 0; i < nums.length; i++) {
+            if (hashSet.contains(nums[i])) {
+                return true;
+            } else {
+                hashSet.add(nums[i]);
+            }
+        }
+        return false;
+    }
+}
+
+
+
+
+
+
+
+
+
+
