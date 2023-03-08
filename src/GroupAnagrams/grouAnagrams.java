@@ -3,7 +3,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
-
 public class grouAnagrams {
     public List<List<String>> grpAnagrams(String[] str) {
         List<List<String>> res = new ArrayList<>();
