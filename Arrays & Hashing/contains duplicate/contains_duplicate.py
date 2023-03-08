@@ -37,3 +37,25 @@ class SolnDupe:
             else:
                 hashSet.add(i)
         return False
+
+
+# Given an integer array nums return true if the array contains duplicate values
+# and false if every element is distinct
+class SolnDuplicate:
+    def contains_dupe(self, nums: list[int]):
+        hashSet = set()
+        for n in nums:
+            if n in hashSet:
+                return True
+            else:
+                hashSet.add(n)
+        return False
+
+
+
+
+
+
+
+
+

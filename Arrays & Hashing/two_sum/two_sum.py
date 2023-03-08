@@ -52,3 +52,37 @@ class SolutionTwoSu:
             if difference in prevMap:
                 return  [prevMap[difference],value]
             prevMap[value] = index
+
+
+class SolutionTwoSum:
+    def twoSum(self,nums:list[int],target:int)->list[int]:
+        prevMap = {}
+        for i,n in enumerate(nums):
+            diff = target - n
+            if diff in prevMap:
+                return  [prevMap[diff], i]
+            prevMap[n] = i
+
+
+class twoSum:
+    def twoSum(self,nums:list[int],target:int):
+        prevMap = {}
+        for i,n in enumerate(nums):
+            diff = target - n
+            if diff in prevMap:
+                return  [prevMap[diff],i]
+            prevMap[n] = i
+
+class last:
+    def twoSum(self,nums:list[int],target:int):
+        prevMap = {}#value and index
+        for i,n in enumerate(nums):
+            diff = target - n
+            if n in prevMap:
+                return  [prevMap[diff],i]
+            prevMap[n] = i
+
+
+
+
+
