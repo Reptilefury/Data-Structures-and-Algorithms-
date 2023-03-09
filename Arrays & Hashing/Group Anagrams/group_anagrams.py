@@ -75,23 +75,26 @@ class SolnGroupAnagram:
         return ans.values()
 
 #class GroupAnagrams:
+#Given an array of strings group anagrams together and  return
+class GroupAnagram:
+    def group_anagram(self,strs:list[str])->list[list[str]]:
+        ans = collections.defaultdict(list)
+        for s in strs:
+            count = [0] * 26
+            for c in s:
+                count[ord(c) - ord("a")] += 1
+            ans[tuple(count)].append(s)
+        return ans.values()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+class GroupAnagram:
+    def grp_angram(self,strs:list[str])->list[list[str]]:
+        ans = collections.defaultdict(list)
+        for s in strs:
+            count = [0] * 26
+            for c in s:
+                count[ord(c) - ord("a")] += 1
+            ans[tuple(count)].append(s)
+        return  ans.values()
 
 
 
