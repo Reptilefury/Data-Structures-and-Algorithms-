@@ -1,8 +1,7 @@
 package GroupAnagrams;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
+import javax.swing.plaf.ListUI;
+import java.util.*;
+
 public class grouAnagrams {
     public List<List<String>> grpAnagrams(String[] str) {
         List<List<String>> res = new ArrayList<>();
@@ -110,7 +109,40 @@ class GroupAnagrams{
     }
 }
 
+class SolutionGroup1{
+    public List<List<String>> solGroup(String[] strs){
+        List<List<String>> res = new ArrayList<>();
+        if(strs.length == 0) return res;
+        HashMap<String,List<String>> map = new HashMap<>();
+        for(String s:strs){
+            int[] hash = new int[26];
+            for(char c:s.toCharArray()){
+                hash[c - 'a']++;
+            }
+            String key = new String(Arrays.toString(hash));
+            map.computeIfAbsent(key,k-> new ArrayList<>());
+            map.get(key).add(s);
+        }
+        res.addAll(map.values());
+        return  res;
+    }
+}
 
-
-
-
+class  SolnGrp{
+    public  List<List<String>> groupAnagram(String[] strs){
+        List<List<String>> res = new ArrayList<>();
+        if(strs.length == 0) return  res;
+        HashMap<String,List<String>> map = new HashMap<>();
+        for(String s:strs){
+            int[] hash =  new int[26];
+            for(char c:s.toCharArray()){
+                hash[c - 'a']++;
+            }
+            String key = new String(Arrays.toString(hash));
+            map.computeIfAbsent(key,k-> new ArrayList<>());
+            map.get(key).add(s);
+        }
+        res.addAll(map.values());
+        return res;
+    }
+}
