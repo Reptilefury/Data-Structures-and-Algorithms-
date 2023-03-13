@@ -146,34 +146,69 @@ class TopKfreqLast:
             if len(results) == k:
                 return results
 
+
 class TopKFreQ:
-    def topKfreq(self,nums:list[int],k:int)->list[int]:
+    def topKfreq(self, nums: list[int], k: int) -> list[int]:
         count = {}
         freq = [[] for i in range(len(nums))]
         for i in nums:
-            count[i] = 1 + count.get(i,0)
-        for n,c in count.items():
+            count[i] = 1 + count.get(i, 0)
+        for n, c in count.items():
             freq[c].append(n)
         res = []
-        for i in range(len(freq)-1,0,-1):
-            for n  in freq:
+        for i in range(len(freq) - 1, 0, -1):
+            for n in freq:
 
                 res.append(n)
-                if len(res)== k:
-                    return  res
+                if len(res) == k:
+                    return res
 
 
 class topKfreq:
-    def topKfreq(self,nums:list[int],k:int):
+    def topKfreq(self, nums: list[int], k: int):
         count = {}
         freq = [[] for i in range(len(nums) + 1)]
         for n in nums:
-            count[n] = 1 + count.get(n,0)
-        for key,value in count.items():
+            count[n] = 1 + count.get(n, 0)
+        for key, value in count.items():
             freq[value].append(key)
         res = []
-        for i in range(len(freq) -1, 0,-1):
-            for n  in freq[i]:
+        for i in range(len(freq) - 1, 0, -1):
+            for n in freq[i]:
                 res.append(n)
                 if len(res) == k:
-                    return  res
+                    return res
+
+
+# Given an integer array nums and an integet k
+# Return the k most frequent elements
+class TopKFreq:
+    def solution(self, nums: list[int], k: int) -> list[int]:
+        count = {}
+        freq = [[] for i in range(len(nums) + 1)]
+        for n in nums:
+            count[n] = 1 + count.get(n, 0)
+        for n, c in count.items():
+            freq[c].append(n)
+        res = []
+        for i in range(len(freq) - 1, 0, -1):
+            for n in freq[i]:
+                res.append(n)
+                if len(res) == k:
+                    return res
+
+
+class TopKFreqSoln:
+    def top_freq(self, nums: list[int], k: int) -> list[int]:
+        count = {}
+        freq = [[] for i in range(len(nums) + 1)]
+        for n in nums:
+            count[n] = 1 + count.get(n, 0)
+        for n, c in count.items():
+            freq[c].append(n)
+        res = []
+        for i in range(len(freq) - 1, 0, -1):
+            for n in freq[i]:
+                res.append(n)
+                if len(res) == k:
+                    return res
