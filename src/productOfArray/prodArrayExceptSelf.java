@@ -31,6 +31,7 @@ class ProdArryExceptSelfSol{
         return  arr;
     }
 }
+
 class ProductArrayExceptSelf{
     public  int[] prodArray(int[] nums){
         int[] arr = new int[nums.length];
@@ -73,25 +74,3 @@ class Soln{
         return output;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
