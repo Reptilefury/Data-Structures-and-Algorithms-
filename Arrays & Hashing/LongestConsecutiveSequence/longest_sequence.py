@@ -118,3 +118,32 @@ class LongestSeq:
                     length += 1
                 longest = max(length, longest)
         return longest
+
+
+
+class LastLongestSeq:
+    def longestSeq(self,nums:list[int])->int:
+        numSet = set(nums)
+        longest = 0
+
+        for n in nums:
+            if (n - 1) not in numSet:
+                length = 1
+                while (n + length) in numSet:
+                    length += 1
+                longest = max(length, longest)
+        return  longest
+
+
+class LongestSeq1:
+    def longestSeq(self,nums:list[int]):
+        numSet = set(nums)
+        longest = 0
+
+        for n in nums:
+            if (n - 1) not in numSet:
+                length = 1
+                while (n + length) in numSet:
+                    length += 1
+                longest = max(longest,length)
+        return longest
