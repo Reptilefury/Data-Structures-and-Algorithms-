@@ -1,5 +1,8 @@
 # Given an integer array nums, return True if the array contains a duplicate element
 # return False if does not contain a duplicate value
+from collections import Counter
+
+
 class Soln:
     # Use the Two Pointer method
     def twoSum(self, nums: list[int]) -> bool:
@@ -50,12 +53,5 @@ class SolnDuplicate:
             else:
                 hashSet.add(n)
         return False
-
-
-
-
-
-
-
 
 

@@ -13,76 +13,83 @@ class soln:
     # Given an input array and a target, return a list of indices of two numbers that add up to the target
     class Soln2:
         def twoSum(self, nums: list[int], target: int) -> list[int]:
-            map = {} #value : index
+            map = {}  # value : index
             for index, value in enumerate(nums):  # Iterate through the list and get the index and the value
                 difference = target - value
                 if difference in map:
-                    return [map.get(difference,0),index]
+                    return [map.get(difference, 0), index]
                 else:
                     map[value] = index
             return []
 
 
-#Given an integer array  nums and a target k
-#Return indices of two numbers that add up to k
+# Given an integer array  nums and a target k
+# Return indices of two numbers that add up to k
 class SolutionTwoS:
-    def twoSum(self,nums:list[int],k:int)->list[int]:
-        prevMap = {}#val -> index
-        for i,n in enumerate(nums):
+    def twoSum(self, nums: list[int], k: int) -> list[int]:
+        prevMap = {}  # val -> index
+        for i, n in enumerate(nums):
             diff = k - n
             if diff in prevMap:
-                return  [prevMap[diff], i]
+                return [prevMap[diff], i]
             prevMap[n] = i
 
-    def twoSum2(self,nums:list[int],k:int):
+    def twoSum2(self, nums: list[int], k: int):
         hashMap = {}
-        for key,value in enumerate(nums):
+        for key, value in enumerate(nums):
             diff = k - value
             if diff in hashMap:
-                return  [hashMap[diff],key]
+                return [hashMap[diff], key]
             hashMap[value] = key
 
 
 class SolutionTwoSu:
-    def twoSum(self,nums:list[int],target:int):
+    def twoSum(self, nums: list[int], target: int):
         prevMap = {}
-        for index,value in enumerate(nums):
-            #Get th
+        for index, value in enumerate(nums):
+            # Get th
             difference = target - value
             if difference in prevMap:
-                return  [prevMap[difference],value]
+                return [prevMap[difference], value]
             prevMap[value] = index
 
 
 class SolutionTwoSum:
-    def twoSum(self,nums:list[int],target:int)->list[int]:
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
         prevMap = {}
-        for i,n in enumerate(nums):
+        for i, n in enumerate(nums):
             diff = target - n
             if diff in prevMap:
-                return  [prevMap[diff], i]
+                return [prevMap[diff], i]
             prevMap[n] = i
 
 
 class twoSum:
-    def twoSum(self,nums:list[int],target:int):
+    def twoSum(self, nums: list[int], target: int):
         prevMap = {}
-        for i,n in enumerate(nums):
+        for i, n in enumerate(nums):
             diff = target - n
             if diff in prevMap:
-                return  [prevMap[diff],i]
+                return [prevMap[diff], i]
             prevMap[n] = i
+
 
 class last:
-    def twoSum(self,nums:list[int],target:int):
-        prevMap = {}#value and index
-        for i,n in enumerate(nums):
+    def twoSum(self, nums: list[int], target: int):
+        prevMap = {}  # value and index
+        for i, n in enumerate(nums):
             diff = target - n
             if n in prevMap:
-                return  [prevMap[diff],i]
+                return [prevMap[diff], i]
             prevMap[n] = i
 
 
-
-
-
+class SolnTwoSum:
+    def two_sum(self, target, nums: list[int]) -> list[int]:
+        res = {}  # val:index
+        for index, value in enumerate(nums):
+            difference = target - value
+            if difference in res:
+                return [res[difference], index]
+            res[value] = index
+        return

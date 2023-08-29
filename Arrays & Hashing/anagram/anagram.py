@@ -38,3 +38,18 @@ class Anagram:
             countS[s[i]] = 1 + countS.get(s[i], 0)
             countT[s[i]] = 1 + countT.get(t[i], 0)
         return countS == countT
+
+
+class AnagramNew:
+    def isAnagram(self, s: str, t: str):
+        # Check for the length
+        if len(s) != len(t):
+            return False
+        hashS, hashT = {}, {}
+        for j in range(len(s)):
+            hashS[s[j]] = 1 + hashS.get(s[j], 0)
+            hashT[t[j]] = 1 + hashT.get(t[j], 0)
+        for c in hashS:
+            if hashS[c] != hashT.get(c, 0):
+                return False
+        return True
