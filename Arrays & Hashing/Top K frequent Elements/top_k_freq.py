@@ -212,3 +212,19 @@ class TopKFreqSoln:
                 res.append(n)
                 if len(res) == k:
                     return res
+
+
+class SolutionTopKF:
+    def topKFrequentElement(self, nums: list[int], k: int) -> list[int]:
+        count = {}
+        frequency = [[] for i in range(len(nums) + 1)]
+        for number in nums:
+            count[number] = 1 + count.get(number, 0)
+        for n, c in count.items():
+            frequency[c].append(n)
+        res = []
+        for i in range(len(frequency) - 1, 0, -1):
+            for n in frequency[i]:
+                res.append(n)
+                if len(res) == k:
+                    return res
