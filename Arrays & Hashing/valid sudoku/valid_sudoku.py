@@ -1,5 +1,6 @@
 import collections
 
+
 class Solution:
     def isValidSudoku(self, board: list[list[str]]) -> bool:
         rows = collections.defaultdict(set)
@@ -103,8 +104,10 @@ class IsValidSudoku:
                 cols[c].add(board[r][c])
                 squares[(r // 3, c // 3)].add(board[r][c])
         return True
+
+
 class Solution:
-    def isValidSudoku(self,board:list[list[str]])->bool:
+    def isValidSudoku(self, board: list[list[str]]) -> bool:
         cols = collections.defaultdict(set)
         rows = collections.defaultdict(set)
         squares = collections.defaultdict(set)
@@ -113,32 +116,47 @@ class Solution:
                 if board[r][c] == ".":
                     continue
                 if (board[r][c] in rows[r] or board[r][c] in cols[c]
-                    or board[r][c] in squares[(r//3,c//3)]
+                        or board[r][c] in squares[(r // 3, c // 3)]
                 ):
                     return False
                 cols[c].add(board[r][c])
                 rows[r].add(board[r][c])
-                squares[(r//3,c//3)].add(board[r][c])
+                squares[(r // 3, c // 3)].add(board[r][c])
         return True
+
 
 ##REPEAT THIS
 class Solution:
-    def isValidSudoku(self,board:list[list[str]])->bool:
+    def isValidSudoku(self, board: list[list[str]]) -> bool:
         cols = collections.defaultdict(set)
         rows = collections.defaultdict(set)
         squares = collections.defaultdict(set)
-        for r in  range(9):
+        for r in range(9):
             for c in range(9):
-                if (board[r][c] =='.'):
+                if (board[r][c] == '.'):
                     continue
-                if (board[r][c] in  rows[r] or board[r][c] in  cols[c]  or board[r][c] in squares[r//3,c//3]):
-                    return  False
+                if (board[r][c] in rows[r] or board[r][c] in cols[c] or board[r][c] in squares[r // 3, c // 3]):
+                    return False
                 cols[c].add(board[r][c])
                 rows[r].add(board[r][c])
-                squares[(r//3,c//3)].add(board[r][c])
+                squares[(r // 3, c // 3)].add(board[r][c])
         return True
 
-
-
-
-
+class SolutionG:
+    def isValidSudoku(self, board: list[list[str]]):
+        rows = collections.defaultdict(set)
+        cols = collections.defaultdict(set)
+        squares = collections.defaultdict(set)
+        for r in range(9):
+            for c in range(9):
+                if board[r][c] ==".":
+                    continue
+                if (board[r][c] in rows[r] or
+                        board[r][c] in cols[c] or
+                        board[r][c] in squares[(r // 3, c // 3)]
+                ):
+                    return False
+                cols[c].add(board[r][c])
+                rows[r].add(board[r][c])
+                squares[(r // 3, c // 3)].add(board[r][c])
+        return True
