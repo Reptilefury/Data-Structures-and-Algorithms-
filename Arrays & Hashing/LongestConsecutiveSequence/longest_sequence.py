@@ -120,9 +120,8 @@ class LongestSeq:
         return longest
 
 
-
 class LastLongestSeq:
-    def longestSeq(self,nums:list[int])->int:
+    def longestSeq(self, nums: list[int]) -> int:
         numSet = set(nums)
         longest = 0
 
@@ -132,11 +131,11 @@ class LastLongestSeq:
                 while (n + length) in numSet:
                     length += 1
                 longest = max(length, longest)
-        return  longest
+        return longest
 
 
 class LongestSeq1:
-    def longestSeq(self,nums:list[int]):
+    def longestSeq(self, nums: list[int]):
         numSet = set(nums)
         longest = 0
 
@@ -145,5 +144,24 @@ class LongestSeq1:
                 length = 1
                 while (n + length) in numSet:
                     length += 1
-                longest = max(longest,length)
+                longest = max(longest, length)
         return longest
+
+
+class SolutionSQ:
+    def longestConsecutiveSeq(self, nums: list[int]) -> int:
+        numSet = set(nums)
+        longest = 0
+        for n in numSet:
+            if (n - 1) not in numSet:
+                length = 1
+                while (n + length) in numSet:
+                    length += 1
+                longest = max(length, longest)
+        return longest
+
+
+
+
+
+
