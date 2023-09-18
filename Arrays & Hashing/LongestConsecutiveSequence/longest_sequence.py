@@ -147,7 +147,6 @@ class LongestSeq1:
                 longest = max(longest, length)
         return longest
 
-
 class SolutionSQ:
     def longestConsecutiveSeq(self, nums: list[int]) -> int:
         numSet = set(nums)
@@ -159,9 +158,3 @@ class SolutionSQ:
                     length += 1
                 longest = max(length, longest)
         return longest
-
-
-
-
-
-
